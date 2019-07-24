@@ -36,7 +36,7 @@ indexhtml += '    <meta name="author" content="">\n'
 indexhtml += '    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">\n'
 indexhtml += '    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">\n'
 indexhtml += '</head>\n'
-indexhtml += '<body>\n\n</body>\n</html>'
+indexhtml += '<body>\n\n<script src=main.js></script></body>\n</html>'
 
 fs.writeFileSync(cwd + "/index.html", indexhtml)
 
