@@ -18,10 +18,6 @@
   },
   "homepage": "https://github.com/maly/mybase#readme",
   "dependencies": {
-    "async": "^3.1.0",
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "jquery-ui-dist": "^1.12.1",
-    "popper.js": "^1.15.0"
+    "async": "^3.1.0"
   }
 }
