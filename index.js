@@ -17,7 +17,7 @@ pkg.scripts.build = "rm build/* ; parcel build index.html -d build --public-url 
 fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4))
 
 //main.js
-var mainjs = 'window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");\n'
+var mainjs = '// npx parcel-boiler-es6\nwindow.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");\n'
 mainjs += 'require("./node_modules/bootstrap/dist/js/bootstrap.min");\n'
 mainjs += 'require("jquery-ui-dist/jquery-ui.js");\n'
 
