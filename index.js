@@ -30,12 +30,10 @@ const donpm = function (npm) {
         return (err, null)
     })
 }
-/*
+
 
 donpm('npm i --save bootstrap');
 donpm('npm i --save popper.js');
 donpm('npm i --save jquery');
 donpm('npm i --save jquery-ui-dist');
 donpm('npm i --save @fortawesome/fontawesome-free');
-
-*/
