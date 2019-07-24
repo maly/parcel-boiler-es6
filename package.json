@@ -1,0 +1,27 @@
+{
+  "name": "mybase",
+  "version": "1.0.0",
+  "description": "My Parcel Boilerplate for ES6",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maly/mybase.git"
+  },
+  "author": "Martin Maly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maly/mybase/issues"
+  },
+  "homepage": "https://github.com/maly/mybase#readme",
+  "dependencies": {
+    "async": "^3.1.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
+    "popper.js": "^1.15.0"
+  }
+}
