@@ -21,8 +21,7 @@ var mainjs = '// npx parcel-boiler-es6\nwindow.$ = window.jQuery = require("./no
 mainjs += 'require("./node_modules/bootstrap/dist/js/bootstrap.min");\n'
 mainjs += 'require("jquery-ui-dist/jquery-ui.js");\n'
 
-
-fs.writeFileSync(cwd + "/main.js", mainjs)
+if (!fs.existsSync(cwd + "/main.js")) fs.writeFileSync(cwd + "/main.js", mainjs)
 
 var indexhtml = '';
 indexhtml += '<!DOCTYPE html>\n'
@@ -38,7 +37,7 @@ indexhtml += '    <link rel="stylesheet" href="node_modules/@fortawesome/fontawe
 indexhtml += '</head>\n'
 indexhtml += '<body>\n\n<script src=main.js></script></body>\n</html>'
 
-fs.writeFileSync(cwd + "/index.html", indexhtml)
+if (!fs.existsSync(cwd + "/index.html")) fs.writeFileSync(cwd + "/index.html", indexhtml)
 
 const donpm = function (npm) {
 
@@ -60,3 +59,4 @@ donpm('npm i --save popper.js');
 donpm('npm i --save jquery');
 donpm('npm i --save jquery-ui-dist');
 donpm('npm i --save @fortawesome/fontawesome-free');
+donpm('npm i --save babel-core babel-runtime babel-plugin-transform-runtime');
