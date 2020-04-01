@@ -16,9 +16,10 @@ const {
 } = require('child_process');
 const path = require('path');
 
-const fileCopy = (name) => {
+const fileCopy = (name,name2) => {
+    if (!name2) name2=name
     let data = fs.readFileSync(__dirname+"/files/"+name,"utf-8")
-    fs.writeFileSync(cwd+"/"+name,data)
+    fs.writeFileSync(cwd+"/"+name2,data)
 }
 
 
@@ -65,7 +66,7 @@ fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4))
 //Another files
 fileCopy(".eslintrc.js")
 fileCopy(".babelrc")
-fileCopy(".gitignore")
+fileCopy("gitignore",".gitignore")
 
 //
 
