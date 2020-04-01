@@ -6,6 +6,7 @@ npm publish --access=public
 */
 
 console.log('v6', process.argv, process.cwd(), __dirname);
+
 const cwd = process.cwd();
 //const async = require("async");
 const fs = require("fs");
@@ -14,6 +15,12 @@ const {
     exec
 } = require('child_process');
 const path = require('path');
+
+const fileCopy = (name) => {
+    let data = fs.readFileSync(__dirname+"/"+name,"utf-8")
+    fs.writeFileSync(cwd+"/"+name)
+}
+
 
 var pkg;
 if (fs.existsSync((cwd + "/package.json"))) {
@@ -41,8 +48,7 @@ if (fs.existsSync((cwd + "/package.json"))) {
           "core-js": "^3.6.4",
           "jquery": "^3.4.1",
           "jquery-ui-dist": "^1.12.1",
-          "popper.js": "^1.15.0",
-          "remove-accents": "^0.4.2"
+          "popper.js": "^1.15.0"
         },
         "devDependencies": {
           "@babel/core": "^7.7.7",
@@ -57,7 +63,9 @@ if (fs.existsSync((cwd + "/package.json"))) {
 fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4))
 
 //Another files
-
+fileCopy(".eslintrc.js")
+fileCopy(".babelrc")
+fileCopy(".gitignore")
 
 //
 
@@ -65,6 +73,8 @@ fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4))
 var mainjs = '// npx parcel-boiler-es6\nwindow.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");\n'
 mainjs += 'require("./node_modules/bootstrap/dist/js/bootstrap.min");\n'
 mainjs += 'require("jquery-ui-dist/jquery-ui.js");\n'
+mainjs += '\n//HERE\n\n'
+mainjs += '\n$(document).ready(() => {\n// on load\n})\n'
 
 if (!fs.existsSync(cwd + "/main.js")) fs.writeFileSync(cwd + "/main.js", mainjs)
 
@@ -106,6 +116,7 @@ donpm('npm i --save jquery-ui-dist');
 donpm('npm i --save @fortawesome/fontawesome-free');
 donpm('npm i --save @babel/runtime @babel/plugin-transform-runtime core-js');
 donpm('npm i --save-dev @babel/core @babel/preset-env babel-plugin-transform-runtime cssnano');
+donpm('npm i --save @adent/router');
 
 /*
 
