@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
+/*
+npm init --scope=@adent
+npm publish --access=public
+*/
+
 console.log('v6', process.argv, process.cwd(), __dirname);
 const cwd = process.cwd();
-const async = require("async");
+//const async = require("async");
 const fs = require("fs");
 
 const {
@@ -10,11 +15,51 @@ const {
 } = require('child_process');
 const path = require('path');
 
-var pkg = JSON.parse(fs.readFileSync(cwd + "/package.json"));
+var pkg;
+if (fs.existsSync((cwd + "/package.json"))) {
+    pkg = JSON.parse(fs.readFileSync(cwd + "/package.json"));
+    pkg.scripts.dev = "parcel index.html";
+    pkg.scripts.build = "parcel build index.html -d .deploy --public-url / --no-source-maps";
+} else {
+    pkg = {
+        "name": "any-name",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "dev": "parcel index.html",
+          "build": "parcel build index.html -d ./.deploy --public-url / --no-source-maps"
+        },
+        "author": "Martin Malý <maly@maly.cz>",
+        "license": "MIT",
+        "dependencies": {
+          "@babel/plugin-transform-runtime": "^7.7.6",
+          "@babel/runtime": "^7.8.3",
+          "@fortawesome/fontawesome-free": "^5.9.0",
+          "bootstrap": "^4.3.1",
+          "core-js": "^3.6.4",
+          "jquery": "^3.4.1",
+          "jquery-ui-dist": "^1.12.1",
+          "popper.js": "^1.15.0",
+          "remove-accents": "^0.4.2"
+        },
+        "devDependencies": {
+          "@babel/core": "^7.7.7",
+          "@babel/preset-env": "^7.7.7",
+          "babel-plugin-transform-runtime": "^6.23.0",
+          "cssnano": "^4.1.10"
+        }
+      }
+}
+
 //console.log(pkg.scripts)
-pkg.scripts.dev = "parcel index.html";
-pkg.scripts.build = "rm build/* ; parcel build index.html -d build --public-url /offline/ --no-source-maps";
 fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4))
+
+//Another files
+
+
+//
 
 //main.js
 var mainjs = '// npx parcel-boiler-es6\nwindow.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");\n'
@@ -59,4 +104,26 @@ donpm('npm i --save popper.js');
 donpm('npm i --save jquery');
 donpm('npm i --save jquery-ui-dist');
 donpm('npm i --save @fortawesome/fontawesome-free');
-donpm('npm i --save babel-core babel-runtime babel-plugin-transform-runtime');
+donpm('npm i --save @babel/runtime @babel/plugin-transform-runtime core-js');
+donpm('npm i --save-dev @babel/core @babel/preset-env babel-plugin-transform-runtime cssnano');
+
+/*
+
+        "dependencies": {
+          "@babel/plugin-transform-runtime": "^7.7.6",
+          "@babel/runtime": "^7.8.3",
+          "@fortawesome/fontawesome-free": "^5.9.0",
+          "bootstrap": "^4.3.1",
+          "core-js": "^3.6.4",
+          "jquery": "^3.4.1",
+          "jquery-ui-dist": "^1.12.1",
+          "popper.js": "^1.15.0",
+          "remove-accents": "^0.4.2"
+        },
+        "devDependencies": {
+          "@babel/core": "^7.7.7",
+          "@babel/preset-env": "^7.7.7",
+          "babel-plugin-transform-runtime": "^6.23.0",
+          "cssnano": "^4.1.10"
+        }
+*/

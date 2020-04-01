@@ -1,9 +1,11 @@
 {
-  "name": "parcel-boiler-es6",
+  "name": "@adent/parcel-boiler-es6",
   "version": "1.3.0",
   "description": "My Parcel Boilerplate for ES6",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "parcel-boiler-es6": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
