@@ -1,6 +1,6 @@
 {
   "name": "@adent/parcel-boiler-es6",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "My Parcel Boilerplate for ES6",
   "main": "index.js",
   "bin": {
