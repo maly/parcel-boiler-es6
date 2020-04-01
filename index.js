@@ -18,7 +18,7 @@ const path = require('path');
 
 const fileCopy = (name) => {
     let data = fs.readFileSync(__dirname+"/"+name,"utf-8")
-    fs.writeFileSync(cwd+"/"+name)
+    fs.writeFileSync(cwd+"/"+name,data)
 }
 
 
