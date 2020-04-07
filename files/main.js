@@ -1,4 +1,4 @@
-// npx parcel-boiler-es6
+// npx @adent/parcel-boiler-es6
 window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
 require("./node_modules/bootstrap/dist/js/bootstrap.min");
 require("jquery-ui-dist/jquery-ui.js");

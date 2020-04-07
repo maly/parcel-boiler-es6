@@ -3,7 +3,7 @@
 ## Usage
 
 1. Create a project
-2. Make necessary installation with `npx parcel-boiler-es6`
+2. Make necessary installation with `npx @adent/parcel-boiler-es6`
 
 ## What it installs?
 
