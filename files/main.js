@@ -28,6 +28,9 @@ ohc((params) => {
 $(document).ready(() => {
   // on load
 
+  //loaded
+  $("#_loader").hide();
+  $(".container.onload").show();
   // Router setup
   window.onhashchange = ohc;
   window.onhashchange();

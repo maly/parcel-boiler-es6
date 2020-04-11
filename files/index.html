@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container onload" style="display: none;">
       <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
         <button
           class="navbar-toggler"
@@ -53,9 +53,17 @@
       </nav>
     </div>
 
-    <div class="container">
+    <div class="container onload" id="_main" style="display: none;">
       IT WORKS!
     </div>
+
+    <div class="container" id="_loader" style="min-height: 100vh;">
+      <div class="row justify-content-center" style="height: 25vh;"></div>
+      <div class="row justify-content-center" style="height: 50vh;">
+        <img src="./img/loader-drop.svg" height="100%" />
+      </div>
+    </div>
+
 
     <script src="main.js"></script>
   </body>
