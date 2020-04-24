@@ -5,7 +5,6 @@ npm init --scope=@adent
 npm publish --access=public
 */
 
-
 //https://icons8.com/preloaders/en/filtered-search/all/svg/
 
 console.log("v6", process.argv, process.cwd(), __dirname);
@@ -66,9 +65,9 @@ if (fs.existsSync(cwd + "/package.json")) {
 //console.log(pkg.scripts)
 fs.writeFileSync(cwd + "/package.json", JSON.stringify(pkg, null, 4));
 
-let dir="./img"
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
+let dir = "./img";
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir);
 }
 fileCopy("img/loader-drop.svg");
 fileCopy("img/loader-balls.svg");
@@ -134,7 +133,6 @@ const donpm = function (npm) {
   );
 };
 
-
 donpm("npm i --save bootstrap");
 donpm("npm i --save popper.js");
 donpm("npm i --save jquery");
@@ -145,6 +143,8 @@ donpm(
   "npm i --save-dev @babel/core @babel/preset-env babel-plugin-transform-runtime cssnano"
 );
 donpm("npm i --save @adent/router");
+
+donpm("npm i --save-dev parcel-plugin-nuke-dist parcel-plugin-compress");
 
 /*
 

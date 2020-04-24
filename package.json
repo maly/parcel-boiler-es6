@@ -7,8 +7,7 @@
     "parcel-boiler-es6": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "npm version patch && git push --follow-tags && npm publish"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
