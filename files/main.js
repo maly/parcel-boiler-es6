@@ -1,6 +1,8 @@
 // npx @adent/parcel-boiler-es6
-window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
-require("./node_modules/bootstrap/dist/js/bootstrap.min");
+window.$ = window.jQuery = require("jquery"); //("./node_modules/jquery/dist/jquery.min.js");
+//require("./node_modules/bootstrap/dist/js/bootstrap.min");
+require("popper.js");
+require("bootstrap/js/src");
 require("jquery-ui-dist/jquery-ui.js");
 
 //HERE
@@ -20,10 +22,13 @@ const paths = [
 const ohc = require("@adent/router")(paths);
 
 // router middleware
-ohc((params) => {
-  console.log(params);
+ohc((params, path) => {
+  console.log(params, path);
 });
-// --- HASH ROUTER BEGIN ---
+
+// --- HASH ROUTER register global ---
+ohc("global")
+// --- HASH ROUTER END ---
 
 $(document).ready(() => {
   // on load

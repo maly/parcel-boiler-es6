@@ -39,25 +39,32 @@ if (fs.existsSync(cwd + "/package.json")) {
       test: 'echo "Error: no test specified" && exit 1',
       dev: "parcel index.html",
       build:
-        "parcel build index.html -d ./.deploy --public-url / --no-source-maps",
+        "parcel build index.html -d ../deploy --public-url / --no-source-maps",
     },
     author: "Martin Malý <maly@maly.cz>",
     license: "MIT",
     dependencies: {
-      "@babel/plugin-transform-runtime": "^7.7.6",
-      "@babel/runtime": "^7.8.3",
-      "@fortawesome/fontawesome-free": "^5.9.0",
-      bootstrap: "^4.3.1",
-      "core-js": "^3.6.4",
-      jquery: "^3.4.1",
+      "@babel/plugin-transform-runtime": "^7.11.0",
+      "@babel/runtime": "^7.11.2",
+      "@fortawesome/fontawesome-free": "^5.14.0",
+      bootstrap: "^4.5.2",
+      "core-js": "^3.6.5",
+      jquery: "^3.5.1",
       "jquery-ui-dist": "^1.12.1",
-      "popper.js": "^1.15.0",
+      "popper.js": "^1.16.1",
     },
     devDependencies: {
-      "@babel/core": "^7.7.7",
-      "@babel/preset-env": "^7.7.7",
+      "@babel/core": "^7.11.1",
+      "@babel/preset-env": "^7.11.0",
       "babel-plugin-transform-runtime": "^6.23.0",
       cssnano: "^4.1.10",
+          "parcel-plugin-compress": "^1.1.0",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "parcel-plugin-static-files-copy": "^2.4.4",
+    "parcel-plugin-text": "^0.9.6",
+    "parcel-plugin-uglify": "^1.0.0",
+    "posthtml-include": "^1.4.3",
+    "uglify-js": "^3.10.1"
     },
   };
 }
@@ -143,8 +150,11 @@ donpm(
   "npm i --save-dev @babel/core @babel/preset-env babel-plugin-transform-runtime cssnano"
 );
 donpm("npm i --save @adent/router");
+donpm("npm i --save @adent/czech-flex");
+donpm("npm i --save @adent/message-broker");
 
-donpm("npm i --save-dev parcel-plugin-nuke-dist parcel-plugin-compress");
+donpm("npm i --save-dev posthtml-include uglify-js");
+donpm("npm i --save-dev parcel-plugin-nuke-dist parcel-plugin-compress parcel-plugin-static-files-copy parcel-plugin-text parcel-plugin-uglify");
 
 /*
 
