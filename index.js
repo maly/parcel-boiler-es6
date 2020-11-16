@@ -83,6 +83,8 @@ fileCopy("img/loader-ring.svg");
 //Another files
 fileCopy(".eslintrc.js");
 fileCopy(".babelrc");
+fileCopy(".posthtmlrc");
+fileCopy(".parcel-plugin-textrc");
 fileCopy("gitignore", ".gitignore");
 fileCopy("main.js");
 fileCopy("index.html");
@@ -154,7 +156,7 @@ donpm("npm i --save @adent/czech-flex");
 donpm("npm i --save @adent/message-broker");
 
 donpm("npm i --save-dev posthtml-include uglify-js");
-donpm("npm i --save-dev parcel-plugin-nuke-dist parcel-plugin-compress parcel-plugin-static-files-copy parcel-plugin-text parcel-plugin-uglify");
+donpm("npm i --save-dev parcel-plugin-nuke-dist parcel-plugin-compress parcel-plugin-static-files-copy parcel-plugin-text parcel-plugin-uglify posthtml-include");
 
 /*
 
